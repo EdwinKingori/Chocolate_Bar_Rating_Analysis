@@ -53,17 +53,21 @@ ggplot(data = flavors_df) +
   labs(title="Exploring the production of chocolate bars")+
   theme(plot.title = element_text(hjust = 0.5),
         panel.border = element_rect(color = 'black',  fill = NA),
-        axis.text.x = element_text(angle =90, hjust = 1))
+        axis.text.x = element_text(angle =60, hjust = 1))
 
 #Exploring the ratings per year
 #Insights: 
-    #The geom_smooth() function is added with method = "lm" to include a trend line. This line represents the overall trend in ratings over the years. Adjust the method and parameters as needed to fit the desired model.
+    #The geom_smooth() function is added with method = "lm" to include a trend line. 
+      #This line represents the overall trend in ratings over the years. Adjust the method and parameters as needed to fit the desired model.
 
     #The x-axis label is set to "Review Date" and the y-axis label is set to "Rating" using the labs() function.
 
-    #The scale_x_continuous() function is used to set the x-axis breaks to a sequence of years. Adjust the by parameter as needed to control the spacing of the breaks.
+    #The scale_x_continuous() function is used to set the x-axis breaks to a sequence of years.
+      #Adjust the by parameter as needed to control the spacing of the breaks.
 
-    #The geom_text() function is added to display annotations for the average rating per year. It calculates the mean rating for each year using the aggregate() function and displays the rounded rating value on the plot. Adjust the positioning (vjust) and formatting (round()) of the annotations as desired.
+    #The geom_text() function is added to display annotations for the average rating per year. 
+      #It calculates the mean rating for each year using the aggregate() function and displays the rounded rating value on the plot.
+        #Adjust the positioning (vjust) and formatting (round()) of the annotations as desired.
 
 ggplot(data = flavors_df, aes(x=review_date, y = rating, color = cocoa_percent))+
   geom_point()+
